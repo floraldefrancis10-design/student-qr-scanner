@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student QR System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Student QR System</h1>
+        <p>Student Registration & QR Code Scanner</p>
+        <p>Developer: Francis Floralde Sepeda</p>
+    </header>
+
+    <section class="card">
+
+        <h2>Student Registration</h2>
+
+        <form id="studentForm">
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label>Student ID</label>
+                    <input type="text" id="studentID"
+                        placeholder="Enter Student ID" required>
+                </div>
+
+                <div class="field">
+                    <label>Full Name</label>
+                    <input type="text" id="fullName"
+                        placeholder="Enter Full Name" required>
+                </div>
+
+                <div class="field">
+                    <label>Program</label>
+                    <input type="text" id="program"
+                        placeholder="e.g. BSCS" required>
+                </div>
+
+                <div class="field">
+                    <label>Year Level</label>
+                    <input type="text" id="yearLevel"
+                        placeholder="e.g. 1st Year" required>
+                </div>
+
+                <div class="field">
+                    <label>Section</label>
+                    <input type="text" id="section"
+                        placeholder="e.g. A" required>
+                </div>
+
+            </div>
+
+            <button type="submit" class="primary">
+                Generate Student QR Code
+            </button>
+
+        </form>
+
+        <div class="result" id="qrResult" style="display:none;">
+
+            <h2>Generated QR Code</h2>
+
+            <div id="qrcode"></div>
+
+            <p class="message">
+                Scan this QR code to retrieve student information.
+            </p>
+
+            <button class="secondary" onclick="downloadQR()">
+                Download QR Code
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>QR Code Scanner</h2>
+
+        <div id="reader"></div>
+
+        <p class="message" id="scanMessage">
+            Allow camera access to scan a student QR code.
+        </p>
+
+        <div id="studentInfo">
+
+            <h2>Student Information</h2>
+
+            <div class="info-item">
+                Student ID: <span id="showID"></span>
+            </div>
+
+            <div class="info-item">
+                Full Name: <span id="showName"></span>
+            </div>
+
+            <div class="info-item">
+                Program: <span id="showProgram"></span>
+            </div>
+
+            <div class="info-item">
+                Year Level: <span id="showYear"></span>
+            </div>
+
+            <div class="info-item">
+                Section: <span id="showSection"></span>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+</body>
+</html>
